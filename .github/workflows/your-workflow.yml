@@ -1,0 +1,39 @@
+name: Export Godot Project to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Replace 'main' with your branch name if different.
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Godot
+    - name: Set up Godot
+      uses: firebelley/setup-godot@v1
+      with:
+        godot-version: '4.2'  # Update to your Godot version.
+
+    # Step 3: Clear the docs folder
+    - name: Clear old files
+      run: |
+        rm -rf ./docs/*
+
+    # Step 4: Export the Godot project for HTML5
+    - name: Export Godot HTML5
+      run: |
+        mkdir -p ./docs
+        godot --export "HTML5" ./docs/index.html
+
+    # Step 5: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
