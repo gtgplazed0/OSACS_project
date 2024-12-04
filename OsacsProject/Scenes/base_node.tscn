@@ -34,6 +34,7 @@ offset_right = 506.5
 offset_bottom = 31.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "New change??"
+text = "New change
+"
 label_settings = SubResource("LabelSettings_vc28y")
 horizontal_alignment = 1
