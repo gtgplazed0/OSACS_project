@@ -18,7 +18,7 @@ jobs:
     - name: Set up Godot
       uses: firebelley/setup-godot@v1
       with:
-        godot-version: '3.5'  # Update to your Godot version.
+        godot-version: '4.2'  # Update to your Godot version.
 
     # Step 3: Clear the docs folder
     - name: Clear old files
