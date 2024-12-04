@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bnmrfqiyij5ff"]
+
+[node name="BaseNode" type="Node2D"]
+
+[node name="Hello" type="Label" parent="."]
+offset_right = 640.0
+offset_bottom = 313.0
+text = "Hey guys
+"
